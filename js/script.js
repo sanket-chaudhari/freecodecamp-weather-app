@@ -3,7 +3,7 @@ var weatherData = {};
 var activeScale = 'C';
 
 function setBackground(nowHours){
-  
+
   if((nowHours >= 18 && nowHours <= 23) || (nowHours >= 0 && nowHours <= 6))  {
     $('body').removeClass('day-bg').addClass('night-bg');
   } else {
@@ -30,6 +30,10 @@ function getCurrentTime(){
   var cYear = today.getFullYear();
   var cHour = today.getHours();
   var cMin = today.getMinutes();
+
+  if (cMin < 10) {
+    cMin = '0' + cMin;
+  }
 
   return ( monthNames[cMonth] + " " +cDate  + " " +cYear + " " +cHour+ ":" + cMin);
 }
