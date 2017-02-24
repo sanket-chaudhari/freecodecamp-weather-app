@@ -3,7 +3,7 @@ var weatherData = {};
 var activeScale = 'C';
 
 function setBackground(nowHours){
-  console.log(nowHours);
+  
   if((nowHours >= 18 && nowHours <= 23) || (nowHours >= 0 && nowHours <= 6))  {
     $('body').removeClass('day-bg').addClass('night-bg');
   } else {
@@ -13,7 +13,6 @@ function setBackground(nowHours){
 
 function checkTimer(){
   let now = new Date();
-
   if(now.getMinutes() == 0){
     let nowHour = now.getHours();
     setBackground(nowHour);
